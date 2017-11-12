@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load addthis %}
+
+
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{post.title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,500' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="{% static 'css/simple-line-icons.css' %}">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+</head>
+
+<body>
+		
+
+	<header id="fh5co-header" role="banner">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="navbar-header">
+							<!-- Mobile Toggle Menu Button -->
+							<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle visible-xs-block" data-toggle="collapse" data-target="#fh5co-navbar"
+							 aria-expanded="false" aria-controls="navbar"><i></i></a>
+							<a class="navbar-brand" href="{% url 'index' %}">Sakkhar Saha</a>
+						</div>
+						<div id="fh5co-navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="{% url 'index' %}"><span>Home <span class="border"></span></span></a></li>
+								<li class="active"><a href="{% url 'blog:blog' %}"><span>Blog<span class="border"></span></span></a></li>
+								<li><a href="#"><span>Chart Builder<span class="border"></span></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- END .header -->
+
+
+
+	<div id="fh5co-main">
+		<div class="fh5co-intro text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="intro-lead">{{post.title}}</h1>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="row">
+							<div class="col-md-3 animate-box">
+								<h3>Paragraph</h3>
+								<p>{{post.intro}}</p>
+								<ul class="fh5co-list-check">
+									<li>Posted by :<br> <a href="#">{{post.author}}</a></li>
+									<li>Posted at :<br> <a href="#">{{post.publish}}</a></li>
+									
+
+								</ul>
+							</div>
+							<div class="col-md-9 animate-box">
+								{{post.body|safe}}
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		
+	</div>
+
+	<footer id="fh5co-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 text-center">
+					<p>&copy; <a href="#">Sakkhar</a>. All Rights Reserved. </p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Main JS -->
+	<script src="{% static 'js/main.js' %}"></script>
+	<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-599f8f78503e3551"></script> 
+	<div class="addthis_sharing_toolbox"></div>
+	{% addthis_widget %}
+
+	
+</body>
+
+</html>
